@@ -56,7 +56,6 @@ const NavBar: React.FC<NavBarProps> = ({
     </button>
   );
 
-  // Desktop nav item — fixed width so logo stays perfectly centered
   const DesktopNavItem = ({
     icon,
     label,
@@ -142,7 +141,6 @@ const NavBar: React.FC<NavBarProps> = ({
 
   return (
     <>
-      {/* ── MOBILE: bottom bar ── */}
       <nav
         className={`fixed bottom-0 left-0 right-0 z-50 border-t transition-all duration-500 backdrop-blur-sm flex md:hidden
           ${bgColor} ${borderColor}`}
@@ -158,12 +156,6 @@ const NavBar: React.FC<NavBarProps> = ({
             label="Тема"
             onClick={onToggleNegative}
           />
-
-          {/* Logo center */}
-          <div className="flex items-center justify-center px-1">
-            <img src="/favicon.png" alt="Opensophy" className="w-10 h-10 object-contain" />
-          </div>
-
           <MobileNavItem
             icon={<Folder className="w-5 h-5" />}
             label="Проекты"
@@ -182,56 +174,36 @@ const NavBar: React.FC<NavBarProps> = ({
         </div>
       </nav>
 
-      {/* ── DESKTOP: top bar ── */}
-      {/*
-        Используем CSS grid с 3 зонами: [левые 2 кнопки] [лого по центру] [правые 2 кнопки]
-        Левая и правая зоны одинаковой ширины → лого всегда строго по середине.
-      */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-500 backdrop-blur-sm hidden md:block
           ${bgColor} ${borderColor}`}
       >
-        <div
-          className="w-full px-6 py-2"
-          style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center' }}
-        >
-          {/* Left: Главная + Тема */}
-          <div className="flex items-center justify-end gap-1">
-            <DesktopNavItem
-              icon={<Home className="w-6 h-6" />}
-              label="Главная"
-              onClick={() => handleNavigation('general')}
-            />
-            <DesktopNavItem
-              icon={isNegative ? <Sun className="w-6 h-6" /> : <Moon className="w-6 h-6" />}
-              label="Тема"
-              onClick={onToggleNegative}
-            />
-          </div>
-
-          {/* Center: Logo — always perfectly centered */}
-          <div className="flex items-center justify-center px-4 py-1">
-            <img src="/favicon.png" alt="Opensophy" className="w-14 h-14 object-contain" />
-          </div>
-
-          {/* Right: Проекты + Контакты + Услуги */}
-          <div className="flex items-center justify-start gap-1">
-            <DesktopNavItem
-              icon={<Folder className="w-6 h-6" />}
-              label="Проекты"
-              onClick={() => setIsProjectsOpen(!isProjectsOpen)}
-            />
-            <DesktopNavItem
-              icon={<Phone className="w-6 h-6" />}
-              label="Контакты"
-              onClick={() => handleNavigation('contacts')}
-            />
-            <DesktopNavItem
-              icon={<Heart className="w-6 h-6" />}
-              label="Услуги"
-              onClick={() => handleNavigation('services')}
-            />
-          </div>
+        <div className="w-full px-6 py-2 flex items-center justify-center gap-2">
+          <DesktopNavItem
+            icon={<Home className="w-6 h-6" />}
+            label="Главная"
+            onClick={() => handleNavigation('general')}
+          />
+          <DesktopNavItem
+            icon={isNegative ? <Sun className="w-6 h-6" /> : <Moon className="w-6 h-6" />}
+            label="Тема"
+            onClick={onToggleNegative}
+          />
+          <DesktopNavItem
+            icon={<Folder className="w-6 h-6" />}
+            label="Проекты"
+            onClick={() => setIsProjectsOpen(!isProjectsOpen)}
+          />
+          <DesktopNavItem
+            icon={<Phone className="w-6 h-6" />}
+            label="Контакты"
+            onClick={() => handleNavigation('contacts')}
+          />
+          <DesktopNavItem
+            icon={<Heart className="w-6 h-6" />}
+            label="Услуги"
+            onClick={() => handleNavigation('services')}
+          />
         </div>
       </nav>
 
