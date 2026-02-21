@@ -100,11 +100,6 @@ const Services: React.FC<ServicesProps> = ({ isNegative }) => {
         <p className={cn("text-xs font-bold uppercase tracking-widest mb-3", labelColor)}>
           {label}
         </p>
-        {/*
-          KEY FIX: on mobile use fluid font-size with clamp so long Russian words
-          (e.g. "Кибербезопасность") never overflow or get clipped.
-          text-[clamp(2rem,8vw,4rem)] gives ~32px on 400px wide phones, scaling up.
-        */}
         <h2
           className={cn("font-bold mb-3 leading-tight break-words", textColor)}
           style={{
@@ -166,7 +161,6 @@ const Services: React.FC<ServicesProps> = ({ isNegative }) => {
               <p className={cn("text-xs sm:text-sm font-bold uppercase tracking-widest mb-4", labelColor)}>
                 УСЛУГИ
               </p>
-              {/* Hero heading: fluid size, no clip on narrow screens */}
               <h1
                 className={cn("font-bold mb-6 sm:mb-8 leading-tight break-words", textColor)}
                 style={{
@@ -227,7 +221,6 @@ const Services: React.FC<ServicesProps> = ({ isNegative }) => {
           </div>
         </section>
 
-        {/* divider */}
         <div className={cn("mx-4 sm:mx-8 md:mx-auto md:max-w-7xl h-px", dividerColor)} />
 
         {/* ── РАЗРАБОТКА ── */}
@@ -250,7 +243,6 @@ const Services: React.FC<ServicesProps> = ({ isNegative }) => {
           </div>
         </section>
 
-        {/* divider */}
         <div className={cn("mx-4 sm:mx-8 md:mx-auto md:max-w-7xl h-px", dividerColor)} />
 
         {/* ── ДИЗАЙН ── */}
@@ -282,11 +274,7 @@ const Services: React.FC<ServicesProps> = ({ isNegative }) => {
             )}>
               <div>
                 <h2
-                  className={cn("font-bold mb-3 leading-tight", textColor)}
-                  style={{
-                    fontFamily: 'UnifixSP, sans-serif',
-                    fontSize: 'clamp(1.75rem, 6vw, 3rem)',
-                  }}
+                  className={cn("text-3xl sm:text-4xl md:text-5xl font-bold mb-3 leading-tight", textColor)}
                 >
                   Готовы начать?
                 </h2>
