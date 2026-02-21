@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Allow: /favicon.png
+
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /dist/
+Disallow: /build/
+Disallow: /.env
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /vite.config.ts
+Disallow: /tsconfig.json
+Disallow: /.htaccess
+Disallow: /vercel.json
+
+Sitemap: https://opensophy.com/sitemap.xml

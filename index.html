@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- Favicon для различных устройств и поисковиков -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary meta tags for SEO and social sharing -->
+    <title>Opensophy</title>
+    <meta name="title" content="Opensophy" />
+    <meta name="description" content="Opensophy — проект, который разрабатывает open-source проекты и практические туториалы для всех: от опытных специалистов до тех, кто только делает первые шаги в IT." />
+    <meta name="keywords" content="Opensophy, open source, IT ресурсы, туториалы, кибербезопасность, разработка, обучение программированию, практические гайды, GitHub проекты, образовательный контент, React компоненты, веб-разработка, безопасность" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="language" content="Russian" />
+    <meta name="author" content="Opensophy" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="distribution" content="global" />
+    <link rel="canonical" href="https://opensophy.com/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://opensophy.com/" />
+    <meta property="og:title" content="Opensophy" />
+    <meta property="og:description" content="Opensophy — проект, который разрабатывает open-source проекты и практические туториалы для всех: от опытных специалистов до тех, кто только делает первые шаги в IT." />
+    <meta property="og:image" content="https://opensophy.com/favicon.png" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Opensophy" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://opensophy.com/" />
+    <meta property="twitter:title" content="Opensophy" />
+    <meta property="twitter:description" content="Opensophy — проект, который разрабатывает open-source проекты и практические туториалы для всех: от опытных специалистов до тех, кто только делает первые шаги в IT." />
+    <meta property="twitter:image" content="https://opensophy.com/favicon.png" />
+    
+    <!-- Additional meta tags for mobile and PWA support -->
+    <meta name="theme-color" content="#E8E7E3" />
+    <meta name="msapplication-TileColor" content="#E8E7E3" />
+    <meta name="msapplication-TileImage" content="/favicon.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="format-detection" content="telephone=no" />
+    
+    <!-- Hide technology stack information for security -->
+    <meta name="generator" content="" />
+    <meta name="powered-by" content="" />
+    
+    <!-- Structured data to help search engines understand our content -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Opensophy",
+      "url": "https://opensophy.com",
+      "logo": "https://opensophy.com/favicon.png",
+      "description": "Opensophy — проект, который разрабатывает open-source проекты и практические туториалы для всех: от опытных специалистов до тех, кто только делает первые шаги в IT.",
+      "foundingDate": "2024",
+      "sameAs": [
+        "https://t.me/veilosophy",
+        "https://hub.opensophy.com",
+        "https://github.com/opensophy-projects"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "opensophy@gmail.com",
+        "url": "https://opensophy.com/contacts"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Opensophy",
+      "url": "https://opensophy.com",
+      "description": "Opensophy — проект, который разрабатывает open-source проекты и практические туториалы для всех: от опытных специалистов до тех, кто только делает первые шаги в IT.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://opensophy.com/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <script>
+      // GitHub Pages SPA routing
+      (function(){
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      }());
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
