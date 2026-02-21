@@ -266,46 +266,44 @@ const General: React.FC<GeneralProps> = ({ isNegative }) => {
         <section className={`relative overflow-visible ${bgColor} py-12 sm:py-16 md:py-20 lg:py-28`}>
           <div className="lg:container lg:mx-auto lg:px-4 xl:px-8">
             <div className="lg:max-w-7xl lg:mx-auto px-4 sm:px-6 md:px-8">
-              {/* Логотип сверху */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="flex flex-col items-center mb-12 sm:mb-16"
-              >
-                <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-6">
-                  <img src="/favicon.png" alt="Opensophy Logo" className="w-full h-full object-contain" />
-                </div>
-                <p className={`text-xs sm:text-sm font-semibold uppercase tracking-widest ${labelColor}`}>
-                  О ПРОЕКТЕ
-                </p>
-                <h2
-                  className={`text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] mt-2 ${isNegative ? 'text-white' : 'text-black'}`}
-                  style={{ fontFamily: 'UnifixSP, sans-serif' }}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                {/* Left — heading */}
+                <motion.div
+                  initial={{ opacity: 0, x: -24 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.65 }}
+                  viewport={{ once: true }}
                 >
-                  Opensophy
-                </h2>
-              </motion.div>
+                  <p className={`text-xs sm:text-sm font-semibold uppercase tracking-widest mb-4 ${labelColor}`}>
+                    О ПРОЕКТЕ
+                  </p>
+                  <h2
+                    className={`text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] ${isNegative ? 'text-white' : 'text-black'}`}
+                    style={{ fontFamily: 'UnifixSP, sans-serif' }}
+                  >
+                    Opensophy
+                  </h2>
+                </motion.div>
 
-              {/* Текст о проекте */}
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.65, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="flex flex-col gap-6 max-w-4xl mx-auto"
-              >
-                <p className={`text-base sm:text-lg leading-relaxed text-center ${isNegative ? 'text-white/75' : 'text-black/75'}`}>
-                  Opensophy — проект, который разрабатывает open-source проекты и практические туториалы для всех: от опытных специалистов до тех, кто только делает первые шаги в IT.
-                </p>
-                <p className={`text-base sm:text-lg leading-relaxed text-center ${isNegative ? 'text-white/60' : 'text-black/60'}`}>
-                  Мы создаём инструменты, шаблоны и образовательные материалы в открытом доступе — чтобы каждый мог использовать их в работе и учёбе. Параллельно оказываем профессиональные услуги: проверяем сайты и код на уязвимости, ищем утечки данных, разрабатываем сайты и помогаем с тестированием.
-                </p>
-                <p className={`text-base sm:text-lg leading-relaxed text-center ${isNegative ? 'text-white/60' : 'text-black/60'}`}>
-                  Мы верим, что безопасность и качество кода должны быть доступны каждому — поэтому делимся знаниями открыто и работаем честно.
-                </p>
-              </motion.div>
+                {/* Right — text */}
+                <motion.div
+                  initial={{ opacity: 0, x: 24 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.65, delay: 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex flex-col gap-6"
+                >
+                  <p className={`text-base sm:text-lg leading-relaxed ${isNegative ? 'text-white/75' : 'text-black/75'}`}>
+                    Opensophy — проект, который разрабатывает open-source проекты и практические туториалы для всех: от опытных специалистов до тех, кто только делает первые шаги в IT.
+                  </p>
+                  <p className={`text-base sm:text-lg leading-relaxed ${isNegative ? 'text-white/60' : 'text-black/60'}`}>
+                    Мы создаём инструменты, шаблоны и образовательные материалы в открытом доступе — чтобы каждый мог использовать их в работе и учёбе. Параллельно оказываем профессиональные услуги: проверяем сайты и код на уязвимости, ищем утечки данных, разрабатываем сайты и помогаем с тестированием.
+                  </p>
+                  <p className={`text-base sm:text-lg leading-relaxed ${isNegative ? 'text-white/60' : 'text-black/60'}`}>
+                    Мы верим, что безопасность и качество кода должны быть доступны каждому — поэтому делимся знаниями открыто и работаем честно.
+                  </p>
+                </motion.div>
+              </div>
 
               {/* Divider */}
               <motion.div
@@ -319,7 +317,7 @@ const General: React.FC<GeneralProps> = ({ isNegative }) => {
           </div>
         </section>
 
-        {/* ── НАШ ПОДХОД ── */}
+                {/* ── НАШ ПОДХОД ── */}
         <section className={`relative overflow-visible ${bgColor} py-12 sm:py-16 md:py-20 lg:py-28`}>
           <div className="lg:container lg:mx-auto lg:px-4 xl:px-8">
             <div className="lg:max-w-7xl lg:mx-auto px-4 sm:px-6 md:px-8">
