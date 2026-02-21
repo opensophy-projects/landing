@@ -94,15 +94,23 @@ const Services: React.FC<ServicesProps> = ({ isNegative }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="mb-10 sm:mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-4"
+      className="mb-10 sm:mb-14 flex flex-col gap-4"
     >
       <div>
         <p className={cn("text-xs font-bold uppercase tracking-widest mb-3", labelColor)}>
           {label}
         </p>
+        {/*
+          KEY FIX: on mobile use fluid font-size with clamp so long Russian words
+          (e.g. "Кибербезопасность") never overflow or get clipped.
+          text-[clamp(2rem,8vw,4rem)] gives ~32px on 400px wide phones, scaling up.
+        */}
         <h2
-          className={cn("text-4xl sm:text-5xl md:text-6xl font-bold mb-3", textColor)}
-          style={{ fontFamily: 'UnifixSP, sans-serif' }}
+          className={cn("font-bold mb-3 leading-tight break-words", textColor)}
+          style={{
+            fontFamily: 'UnifixSP, sans-serif',
+            fontSize: 'clamp(2rem, 8vw, 4rem)',
+          }}
         >
           {title}
         </h2>
@@ -110,7 +118,7 @@ const Services: React.FC<ServicesProps> = ({ isNegative }) => {
           {subtitle}
         </p>
       </div>
-      <p className={cn("text-sm font-medium flex-shrink-0 pb-1", labelColor)}>
+      <p className={cn("text-sm font-medium", labelColor)}>
         {note}
       </p>
     </motion.div>
@@ -158,9 +166,13 @@ const Services: React.FC<ServicesProps> = ({ isNegative }) => {
               <p className={cn("text-xs sm:text-sm font-bold uppercase tracking-widest mb-4", labelColor)}>
                 УСЛУГИ
               </p>
+              {/* Hero heading: fluid size, no clip on narrow screens */}
               <h1
-                className={cn("text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 sm:mb-8", textColor)}
-                style={{ fontFamily: 'UnifixSP, sans-serif' }}
+                className={cn("font-bold mb-6 sm:mb-8 leading-tight break-words", textColor)}
+                style={{
+                  fontFamily: 'UnifixSP, sans-serif',
+                  fontSize: 'clamp(2.5rem, 10vw, 6rem)',
+                }}
               >
                 Что мы делаем
               </h1>
@@ -265,12 +277,16 @@ const Services: React.FC<ServicesProps> = ({ isNegative }) => {
         <section className={`py-12 sm:py-16 md:py-20 lg:py-28 px-4 sm:px-6 md:px-8 ${bgColor}`}>
           <div className="max-w-7xl mx-auto">
             <div className={cn(
-              "flex flex-col md:flex-row md:items-center md:justify-between gap-8 border rounded-2xl p-10 md:p-14",
+              "flex flex-col md:flex-row md:items-center md:justify-between gap-8 border rounded-2xl p-8 sm:p-10 md:p-14",
               isNegative ? "border-white/10" : "border-black/10"
             )}>
               <div>
                 <h2
-                  className={cn("text-3xl sm:text-4xl md:text-5xl font-bold mb-3", textColor)}
+                  className={cn("font-bold mb-3 leading-tight", textColor)}
+                  style={{
+                    fontFamily: 'UnifixSP, sans-serif',
+                    fontSize: 'clamp(1.75rem, 6vw, 3rem)',
+                  }}
                 >
                   Готовы начать?
                 </h2>
