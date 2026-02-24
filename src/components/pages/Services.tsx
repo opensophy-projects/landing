@@ -101,10 +101,12 @@ const Services: React.FC<ServicesProps> = ({ isNegative }) => {
           {label}
         </p>
         <h2
-          className={cn("font-bold mb-3 leading-tight break-words", textColor)}
+          className={cn("font-bold mb-3 leading-none", textColor)}
           style={{
             fontFamily: 'UnifixSP, sans-serif',
-            fontSize: 'clamp(2rem, 8vw, 4rem)',
+            fontSize: 'clamp(1.5rem, 5vw, 4rem)',
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
           }}
         >
           {title}
@@ -174,7 +176,7 @@ const Services: React.FC<ServicesProps> = ({ isNegative }) => {
                 Кибербезопасность, разработка и дизайн. Все проекты — по индивидуальной договорённости, без шаблонных прайсов.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a
+                
                   href="mailto:opensophy@gmail.com"
                   className={cn(
                     "inline-flex items-center px-7 py-3.5 rounded-lg font-semibold transition-all duration-300 hover:scale-105",
@@ -183,7 +185,7 @@ const Services: React.FC<ServicesProps> = ({ isNegative }) => {
                 >
                   Написать на Email
                 </a>
-                <a
+                
                   href="https://t.me/veilosophy"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -283,7 +285,7 @@ const Services: React.FC<ServicesProps> = ({ isNegative }) => {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">
-                <a
+                
                   href="mailto:opensophy@gmail.com"
                   className={cn(
                     "inline-flex items-center justify-center px-7 py-3.5 rounded-lg font-semibold transition-all duration-300 hover:scale-105",
@@ -292,7 +294,7 @@ const Services: React.FC<ServicesProps> = ({ isNegative }) => {
                 >
                   Написать на Email
                 </a>
-                <a
+                
                   href="https://t.me/veilosophy"
                   target="_blank"
                   rel="noopener noreferrer"
