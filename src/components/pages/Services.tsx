@@ -176,7 +176,7 @@ const Services: React.FC<ServicesProps> = ({ isNegative }) => {
                 Кибербезопасность, разработка и дизайн. Все проекты — по индивидуальной договорённости, без шаблонных прайсов.
               </p>
               <div className="flex flex-wrap gap-4">
-                
+                <a
                   href="mailto:opensophy@gmail.com"
                   className={cn(
                     "inline-flex items-center px-7 py-3.5 rounded-lg font-semibold transition-all duration-300 hover:scale-105",
@@ -185,7 +185,7 @@ const Services: React.FC<ServicesProps> = ({ isNegative }) => {
                 >
                   Написать на Email
                 </a>
-                
+                <a
                   href="https://t.me/veilosophy"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -270,14 +270,14 @@ const Services: React.FC<ServicesProps> = ({ isNegative }) => {
         {/* ── CTA ── */}
         <section className={`py-12 sm:py-16 md:py-20 lg:py-28 px-4 sm:px-6 md:px-8 ${bgColor}`}>
           <div className="max-w-7xl mx-auto">
-            <div className={cn(
-              "flex flex-col md:flex-row md:items-center md:justify-between gap-8 border rounded-2xl p-8 sm:p-10 md:p-14",
-              isNegative ? "border-white/10" : "border-black/10"
-            )}>
+            <div
+              className={cn(
+                "flex flex-col md:flex-row md:items-center md:justify-between gap-8 border rounded-2xl p-8 sm:p-10 md:p-14",
+                isNegative ? "border-white/10" : "border-black/10"
+              )}
+            >
               <div>
-                <h2
-                  className={cn("text-3xl sm:text-4xl md:text-5xl font-bold mb-3 leading-tight", textColor)}
-                >
+                <h2 className={cn("text-3xl sm:text-4xl md:text-5xl font-bold mb-3 leading-tight", textColor)}>
                   Готовы начать?
                 </h2>
                 <p className={cn("text-base sm:text-lg leading-relaxed max-w-md", subTextColor)}>
@@ -285,7 +285,7 @@ const Services: React.FC<ServicesProps> = ({ isNegative }) => {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">
-                
+                <a
                   href="mailto:opensophy@gmail.com"
                   className={cn(
                     "inline-flex items-center justify-center px-7 py-3.5 rounded-lg font-semibold transition-all duration-300 hover:scale-105",
@@ -294,7 +294,7 @@ const Services: React.FC<ServicesProps> = ({ isNegative }) => {
                 >
                   Написать на Email
                 </a>
-                
+                <a
                   href="https://t.me/veilosophy"
                   target="_blank"
                   rel="noopener noreferrer"
