@@ -93,8 +93,6 @@ export const GlowingServiceCard = memo(({
   }, [handleMove]);
 
   const glowColor = isNegative ? "#ffffff" : "#000000";
-
-  // Full border color on hover
   const hoverBorderColor = isNegative ? "rgba(255,255,255,0.55)" : "rgba(0,0,0,0.55)";
   const idleBorderColor  = isNegative ? "rgba(255,255,255,0.10)" : "rgba(0,0,0,0.10)";
 
@@ -104,7 +102,6 @@ export const GlowingServiceCard = memo(({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={cn(
-        // Keep the original double-border structure: outer wrapper + inner card
         "relative rounded-[1.25rem] p-2 md:rounded-[1.5rem] md:p-3 transition-all duration-200",
         className
       )}
@@ -141,14 +138,14 @@ export const GlowingServiceCard = memo(({
         )} />
       </div>
 
-      {/* Inner card — second border of the double-border */}
+      {/* Inner card */}
       <div className={cn(
         "relative flex h-full flex-col overflow-hidden rounded-xl border-[0.75px] p-6 shadow-sm md:p-6",
         isNegative
           ? "bg-[#0a0a0a] border-white/10 shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)]"
           : "bg-[#E8E7E3] border-black/10"
       )}>
-        {/* Static ambient glow at top — b&w only */}
+        {/* Static ambient glow */}
         <div
           className="pointer-events-none absolute inset-0 rounded-[inherit]"
           style={{
@@ -167,7 +164,6 @@ export const GlowingServiceCard = memo(({
                 "w-fit rounded-lg border-[0.75px] p-2 mb-5",
                 isNegative
                   ? "border-white/20 bg-[#0a0a0a]"
-                  // FIX: light theme icon bg = card bg, not black/5
                   : "border-black/20 bg-[#E8E7E3]"
               )}
             >
@@ -176,12 +172,19 @@ export const GlowingServiceCard = memo(({
               </div>
             </div>
 
+            {/* ── TITLE: адаптивный размер, не переносится ── */}
             <h3
               className={cn(
-                "text-2xl md:text-3xl font-bold mb-1 tracking-tight",
+                "font-bold mb-1 leading-none",
                 isNegative ? "text-white" : "text-black"
               )}
-              style={{ fontFamily: "UnifixSP, sans-serif" }}
+              style={{
+                fontFamily: "UnifixSP, sans-serif",
+                fontSize: "clamp(1.25rem, 2.5vw, 1.875rem)",
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+              }}
             >
               {title}
             </h3>
