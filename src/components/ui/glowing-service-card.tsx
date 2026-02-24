@@ -172,18 +172,18 @@ export const GlowingServiceCard = memo(({
               </div>
             </div>
 
-            {/* ── TITLE: адаптивный размер, не переносится ── */}
+            {/* TITLE — системный шрифт, масштабируется через clamp, не обрезается */}
             <h3
               className={cn(
-                "font-bold mb-1 leading-none",
+                "font-bold mb-1 leading-tight",
                 isNegative ? "text-white" : "text-black"
               )}
               style={{
-                fontFamily: "UnifixSP, sans-serif",
-                fontSize: "clamp(1.25rem, 2.5vw, 1.875rem)",
-                whiteSpace: "nowrap",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
+                fontFamily: "system-ui, -apple-system, sans-serif",
+                fontSize: "clamp(1rem, 2vw, 1.75rem)",
+                wordBreak: "break-word",
+                overflowWrap: "break-word",
+                hyphens: "auto",
               }}
             >
               {title}
